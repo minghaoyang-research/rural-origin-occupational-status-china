@@ -1,0 +1,6 @@
+*.[sS][aA][vV]
+*.rds
+*.RData
+.Rhistory
+.Rproj.user/
+.DS_Store

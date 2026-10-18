@@ -1,0 +1,43 @@
+"date_screen","time_basis","group","N","qualification_earlier","within_one_year","qualification_later","rural_N","rural_later","urban_N","urban_later","fisher_p"
+"reported_dates","A59m current employer","All current workers",1369,639,451,279,604,136,765,143,NA
+"reported_dates","A59m current employer","Adult HE",394,144,69,181,206,101,188,80,NA
+"reported_dates","A59m current employer","Regular HE",860,460,325,75,358,29,502,46,NA
+"reported_dates","A59m current employer","Postgraduate",115,35,57,23,40,6,75,17,NA
+"reported_dates","A59m current employer","Teaching: adult HE",62,17,9,36,39,25,23,11,0.287760577365207
+"reported_dates","A59m current employer","Teaching: regular HE or postgraduate",129,37,67,25,72,16,57,9,0.380853909085108
+"age_screen","A59m current employer","All current workers",1353,626,451,276,597,136,756,140,NA
+"age_screen","A59m current employer","Adult HE",389,139,69,181,201,101,188,80,NA
+"age_screen","A59m current employer","Regular HE",849,452,325,72,356,29,493,43,NA
+"age_screen","A59m current employer","Postgraduate",115,35,57,23,40,6,75,17,NA
+"age_screen","A59m current employer","Teaching: adult HE",62,17,9,36,39,25,23,11,0.287760577365207
+"age_screen","A59m current employer","Teaching: regular HE or postgraduate",127,35,67,25,71,16,56,9,0.500728146339918
+"cumulative_work","A59c cumulative work","All current workers",1376,198,722,456,610,219,766,237,NA
+"cumulative_work","A59c cumulative work","Adult HE",395,45,83,267,208,153,187,114,NA
+"cumulative_work","A59c cumulative work","Regular HE",866,143,572,151,362,52,504,99,NA
+"cumulative_work","A59c cumulative work","Postgraduate",115,10,67,38,40,14,75,24,NA
+"cumulative_work","A59c cumulative work","Teaching: adult HE",62,7,12,43,39,31,23,12,0.0442366731936727
+"cumulative_work","A59c cumulative work","Teaching: regular HE or postgraduate",129,15,81,33,72,22,57,11,0.160617400991138
+"matched_employer","A59m current employer","All current workers",1368,638,451,279,604,136,764,143,NA
+"matched_employer","A59m current employer","Adult HE",393,143,69,181,206,101,187,80,NA
+"matched_employer","A59m current employer","Regular HE",860,460,325,75,358,29,502,46,NA
+"matched_employer","A59m current employer","Postgraduate",115,35,57,23,40,6,75,17,NA
+"matched_employer","A59m current employer","Teaching: adult HE",62,17,9,36,39,25,23,11,0.287760577365207
+"matched_employer","A59m current employer","Teaching: regular HE or postgraduate",129,37,67,25,72,16,57,9,0.380853909085108
+"matched_cumulative","A59c cumulative work","All current workers",1368,196,717,455,604,218,764,237,NA
+"matched_cumulative","A59c cumulative work","Adult HE",393,44,83,266,206,152,187,114,NA
+"matched_cumulative","A59c cumulative work","Regular HE",860,142,567,151,358,52,502,99,NA
+"matched_cumulative","A59c cumulative work","Postgraduate",115,10,67,38,40,14,75,24,NA
+"matched_cumulative","A59c cumulative work","Teaching: adult HE",62,7,12,43,39,31,23,12,0.0442366731936727
+"matched_cumulative","A59c cumulative work","Teaching: regular HE or postgraduate",129,15,81,33,72,22,57,11,0.160617400991138
+"consistent_employer","A59m current employer","All current workers",1353,636,443,274,598,134,755,140,NA
+"consistent_employer","A59m current employer","Adult HE",385,142,65,178,203,101,182,77,NA
+"consistent_employer","A59m current employer","Regular HE",854,459,322,73,355,27,499,46,NA
+"consistent_employer","A59m current employer","Postgraduate",114,35,56,23,40,6,74,17,NA
+"consistent_employer","A59m current employer","Teaching: adult HE",61,17,9,35,39,25,22,10,0.18560229885474
+"consistent_employer","A59m current employer","Teaching: regular HE or postgraduate",128,37,67,24,71,15,57,9,0.500044016316735
+"consistent_cumulative","A59c cumulative work","All current workers",1353,189,712,452,598,216,755,236,NA
+"consistent_cumulative","A59c cumulative work","Adult HE",385,39,81,265,203,152,182,113,NA
+"consistent_cumulative","A59c cumulative work","Regular HE",854,140,565,149,355,50,499,99,NA
+"consistent_cumulative","A59c cumulative work","Postgraduate",114,10,66,38,40,14,74,24,NA
+"consistent_cumulative","A59c cumulative work","Teaching: adult HE",61,6,12,43,39,31,22,12,0.0774785943300271
+"consistent_cumulative","A59c cumulative work","Teaching: regular HE or postgraduate",128,15,81,32,71,21,57,11,0.220251662539592

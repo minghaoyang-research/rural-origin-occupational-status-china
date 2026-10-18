@@ -1,0 +1,7 @@
+"education","origin","Freq","mean_isei","sd_isei","education_label","origin_label"
+"1","0",358,51.6415363128492,17.1168899547426,"Junior college","Urban"
+"2","0",476,57.3785924369748,16.5334518163015,"Bachelor","Urban"
+"3","0",78,67.0558974358974,13.964976826174,"Postgraduate","Urban"
+"1","1",338,51.968224852071,18.8271101752676,"Junior college","Rural"
+"2","1",322,60.6244720496894,17.9282235039338,"Bachelor","Rural"
+"3","1",41,72.8687804878049,11.6130149390935,"Postgraduate","Rural"

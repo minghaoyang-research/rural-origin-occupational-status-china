@@ -1,0 +1,11 @@
+"origin","stage","denominator","N","percent_of_age_group"
+"Urban","age_eligible",2130,2130,100
+"Urban","reported_HE_tier",2130,1019,47.8403755868545
+"Urban","completed_highest_HE",2130,991,46.5258215962441
+"Urban","eligible_occupation",2130,933,43.8028169014084
+"Urban","final_sample",2130,912,42.8169014084507
+"Rural","age_eligible",5565,5565,100
+"Rural","reported_HE_tier",5565,743,13.351302785265
+"Rural","completed_highest_HE",5565,723,12.9919137466307
+"Rural","eligible_occupation",5565,702,12.6145552560647
+"Rural","final_sample",5565,701,12.596585804133

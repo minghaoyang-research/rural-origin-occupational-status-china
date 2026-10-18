@@ -1,0 +1,19 @@
+"order","step","added","before","after","increase"
+"education > parental > demographics",1,"education",1.2126368345972,2.12944936092855,0.916812526331349
+"education > parental > demographics",2,"parental",2.12944936092855,2.28341098625111,0.153961625322561
+"education > parental > demographics",3,"demographics",2.28341098625111,3.56028529399179,1.27687430774068
+"education > demographics > parental",1,"education",1.2126368345972,2.12944936092855,0.916812526331349
+"education > demographics > parental",2,"demographics",2.12944936092855,2.79201762723358,0.662568266305031
+"education > demographics > parental",3,"parental",2.79201762723358,3.56028529399179,0.76826766675821
+"parental > education > demographics",1,"parental",1.2126368345972,2.18067732364026,0.96804048904306
+"parental > education > demographics",2,"education",2.18067732364026,2.28341098625111,0.102733662610849
+"parental > education > demographics",3,"demographics",2.28341098625111,3.56028529399179,1.27687430774068
+"parental > demographics > education",1,"parental",1.2126368345972,2.18067732364026,0.96804048904306
+"parental > demographics > education",2,"demographics",2.18067732364026,3.20584358407933,1.02516626043906
+"parental > demographics > education",3,"education",3.20584358407933,3.56028529399179,0.354441709912467
+"demographics > education > parental",1,"demographics",1.2126368345972,1.59142618040393,0.37878934580673
+"demographics > education > parental",2,"education",1.59142618040393,2.79201762723358,1.20059144682965
+"demographics > education > parental",3,"parental",2.79201762723358,3.56028529399179,0.76826766675821
+"demographics > parental > education",1,"demographics",1.2126368345972,1.59142618040393,0.37878934580673
+"demographics > parental > education",2,"parental",1.59142618040393,3.20584358407933,1.61441740367539
+"demographics > parental > education",3,"education",3.20584358407933,3.56028529399179,0.354441709912467
