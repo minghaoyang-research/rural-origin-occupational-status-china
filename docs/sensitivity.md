@@ -72,7 +72,7 @@ The [models below](../output/tables/income_comparison.csv) fit both ISEI and inc
 
 The income coefficient moves towards zero after adding province indicators. Survey weighting gives estimates of −0.088 and −0.065, and the weighted HC3 and province-clustered intervals all include zero.
 
-Adding weekly hours ([hours models](../output/tables/income_hours.csv), 1,318 respondents with valid hours) makes little difference.
+Among the 1,318 workers with valid hours, adding log weekly hours changes the rural income coefficient from −0.068 to −0.074 ([hours models](../output/tables/income_hours.csv)).
 
 ## Rural contrasts within employer sectors
 

@@ -63,7 +63,6 @@ for (group in 0:1) {
 
 # public is the sector reference; non-teachers are the teaching reference
 sector_outcomes <- c("Log 2016 labour income" = "log_income", ISEI = "isei")
-sector_fits <- list()
 sector_coefficients <- NULL
 sector_contrasts <- NULL
 sector_tests <- NULL
@@ -95,7 +94,6 @@ for (model_name in c("sector", "teaching", "teaching_within_public")) {
       record <- list(outcome = outcome_label, model = model_name, version = version,
         weighted = weighted, province_FE = province, groups = spec$groups,
         interactions = spec$interactions, estimate = estimate)
-      sector_fits[[paste(model_name, outcome_label, version)]] <- record
 
       tab <- sector_result_tables(record)
       sector_coefficients <- rbind(sector_coefficients, tab$coefficients)

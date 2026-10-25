@@ -27,7 +27,7 @@ The main specification is unweighted OLS with HC3 standard errors. I check again
 
 The main analysis uses syntax ISEI. The overview mapping and SIOPS provide alternative scores. The occupation allocation varies the reference score to examine how much of the fitted gap is assigned to teaching.
 
-The scripts regenerate all tables and figures. `tools/check_results.R` checks consistency within and across the saved tables.
+`tools/check_results.R` checks consistency within and across the saved tables.
 
 ## Limitations and next steps
 
@@ -42,6 +42,8 @@ The [research note](docs/research-note.md) presents the argument. The [adjustmen
 ## Running the code
 
 R 4.4.3 with package versions in [renv.lock](renv.lock). The CGSS 2017 data are not distributed here; see [data/raw](data/raw/README.md).
+
+The commands below run the main analysis. To rebuild all outputs, also run the [adjustment](docs/reproducibility.md#adjustment-supplement) and [geographic](docs/reproducibility.md#geographic-supplement) supplements.
 
 ```sh
 Rscript --vanilla -e 'source("renv/activate.R"); renv::restore(prompt = FALSE)'

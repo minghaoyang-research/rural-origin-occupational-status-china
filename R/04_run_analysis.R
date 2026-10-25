@@ -400,7 +400,6 @@ standard <- d
 standard$isei <- as.numeric(scale(d$isei))
 standard$isei_overview <- as.numeric(scale(d$isei_overview))
 std_m3 <- update(primary_models$Model3, data = standard)
-std_ov <- update(std_m3, isei_overview ~ ., data = standard)
 
 # swap one group at a time, keeping raw and standardised comparisons
 map_groups <- c(occ_detail_groups, list("Other occupations" = d$occ_group == "Other"))

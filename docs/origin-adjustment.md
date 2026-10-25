@@ -16,13 +16,15 @@ With an intercept and binary rural origin, residuals average to zero in each ori
 
 Adding qualification tier first raises the rural coefficient by 0.92 points. After parental schooling the same step gives 0.10. With sex and age already in, it gives 1.20. The steps differ because the controls are correlated.
 
-The script fits all eight combinations of the three control groups, always including rural origin and using the same respondents. The [model table](../output/supplementary/origin-adjustment/models.csv) gives HC3 and province-clustered intervals. The six paths are in [sequences.csv](../output/supplementary/origin-adjustment/sequences.csv); [order_summary.csv](../output/supplementary/origin-adjustment/order_summary.csv) gives the smallest, largest and average step for each block across those paths.
+The script fits all eight combinations of the three control groups, always including rural origin and using the same respondents.
 
 | Control group | Full-model allocation | Average over six orders |
 |---|---:|---:|
 | Qualification tier | 0.982 | 0.641 |
 | Parental schooling | 0.760 | 0.873 |
 | Sex and age | 0.606 | 0.833 |
+
+Sources: [full-model allocation](../output/supplementary/origin-adjustment/decomposition_groups.csv) and [entry-order summary](../output/supplementary/origin-adjustment/order_summary.csv).
 
 The full-model allocation uses Model 3 slopes regardless of entry order. Each sequential step uses the slopes estimated with the controls already included, so averaging the six paths gives a different allocation.
 

@@ -24,7 +24,6 @@ for (name in names(subsets)) {
 }
 same_rows <- all(vapply(models, function(fit)
   identical(rownames(model.frame(fit)), rownames(d)), logical(1)))
-raw <- models$none
 
 model_row <- function(fit, label, data) {
   b <- unname(coef(fit)["rural_origin"])
@@ -71,7 +70,7 @@ decompose <- function(data, outcome = "isei", weights = rep(1, nrow(data))) {
   group <- aggregate(increase ~ block, terms, sum)
   b0 <- unname(coef(short)["rural_origin"])
   b1 <- unname(coef(full)["rural_origin"])
-  list(terms = terms, groups = group, raw = b0, adjusted = b1, full = full, short = short)
+  list(terms = terms, groups = group, raw = b0, adjusted = b1, full = full)
 }
 primary <- decompose(d)
 save_table(primary$terms, "decomposition_terms")

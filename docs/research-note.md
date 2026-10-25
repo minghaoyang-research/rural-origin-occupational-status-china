@@ -91,7 +91,7 @@ Among the same 1,347 positive-income workers, the rural ISEI coefficient is posi
 
 I keep the raw estimate beside Model 3 because rural graduates' lower credentials and parental schooling are themselves part of the inequality I want to describe.
 
-Bernardi and Ballarino (2016) examine the link between social origin and occupational destination after education is taken into account. Model 3 approaches this issue through registered place at age 14. Adding the survey's current urban or rural classification raises the coefficient from 3.56 to 3.77 on the same sample; it also rises in the province fixed-effect and weighted models. Where graduate employment outside teaching is scarce, local job opportunities could help account for the concentration of rural graduates in teaching.
+Bernardi and Ballarino (2016) examine the link between social origin and occupational destination after education is taken into account. Model 3 approaches this issue through registered place at age 14. Adding the survey's current urban or rural classification raises the coefficient from 3.56 to 3.77 on the same sample, and the coefficient also rises in the province fixed-effect and weighted models. This adjustment does not account for the positive coefficient.
 
 Teacher training and recruitment may help explain how rural graduates became concentrated in public-institution teaching. Later study offers another route into the graduate sample for teachers who began work without a higher-education qualification. In the proposed [county study](discussion.md), I would link first higher-education certificates to first appointments to see how often entry into teaching preceded entry into the graduate population.
 
