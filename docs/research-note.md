@@ -21,7 +21,11 @@ Source: [selection_by_origin.csv](../output/tables/selection_by_origin.csv). Unw
 
 Most rural respondents are outside this graduate comparison. I read the positive coefficient against that large completion gap. Hout (1988) found little general status association between occupational origins and destinations among US graduates, even though people from higher-status families were more likely to graduate. In their study of Chinese men, Wu and Treiman (2007) found that selection into urban hukou made mobility among urban-hukou holders appear more open.
 
+Brand and Xie (2010) found larger earnings gains from college among US adults less likely to complete it. Testing whether rural-origin students in China also gain more from higher education would require nongraduates as well as graduates and a way to address selection into higher education.
+
 ## Models and adjustment
+
+Bernardi and Ballarino (2016) examine the link between social origin and occupational destination after education is taken into account. Model 3 approaches this issue through registered place at age 14.
 
 The sample comprises 1,613 respondents who completed their highest reported higher-education qualification, whether junior college, a bachelor's or a postgraduate award, and have a current occupation (1,435 respondents) or a most recent non-farm job (178). Model 3 uses unweighted OLS. It regresses ISEI, scored with the syntax conversion in `ISCO08ConveRsions` (Schwitter, 2023), on qualification tier, rural origin, sex, approximate age and the higher available parental-schooling value, with junior college as the reference tier. Teaching participation uses a linear probability model with the same controls; weighted fits are reported as sensitivity checks.
 
@@ -33,7 +37,7 @@ The raw ISEI regression and Model 3 use the same 1,613 people. Adjustment raises
 | Parental schooling | 0.76 |
 | Sex and age | 0.61 |
 
-Education accounts for less than half of the rise. Brand and Xie (2010) found larger earnings gains from college among US adults less likely to complete it. Testing whether rural-origin students in China also gain more from higher education would require nongraduates as well as graduates and a way to address selection into higher education.
+Education accounts for less than half of the rise.
 
 Parental schooling has the largest component when increments are averaged over the [six entry orders](origin-adjustment.md#entry-order).
 
@@ -48,6 +52,8 @@ Parental schooling has the largest component when increments are averaged over t
 | Log 2016 labour income, same sample | 1,347 | −0.103 | −0.187 to −0.019, HC3 |
 
 All rows use the Model 3 controls. Province indicators and clusters use interview location (28 provinces; see [measurement](measurement.md#models-and-inference)). Sources: [model coefficients](../output/tables/model_coefficients.csv), [province models](../output/tables/isei_province.csv), [teaching](../output/tables/occupation_adjusted.csv) and [income](../output/tables/income_comparison.csv).
+
+Adding the survey's current urban or rural classification to Model 3 raises the rural coefficient from 3.56 to 3.77 on the same 1,613 respondents, and the coefficient also rises in the province fixed-effect and weighted models. This adjustment does not account for the positive coefficient.
 
 ## Teaching and employer sector
 
@@ -75,7 +81,7 @@ Public institutions (*shiye danwei*) employ 100 of 114 current rural teachers an
 | State enterprise | 1.50 | −3.55 to 6.54 |
 | Non-state enterprise and other | 0.01 | −2.70 to 2.72 |
 
-Source: [sector contrasts](../output/tables/sector_contrasts.csv). The baseline joint test gives p = .005 under HC3 and .052 with province clustering.
+Public includes government, public institutions and the military. Source: [sector contrasts](../output/tables/sector_contrasts.csv). The baseline joint test gives p = .005 under HC3 and .052 with province clustering.
 
 The public point estimate stays largest with province indicators and weights. I want to trace how the teachers entered these public institutions.
 
@@ -90,8 +96,6 @@ Among the same 1,347 positive-income workers, the rural ISEI coefficient is posi
 ## Conclusion
 
 I keep the raw estimate beside Model 3 because rural graduates' lower credentials and parental schooling are themselves part of the inequality I want to describe.
-
-Bernardi and Ballarino (2016) examine the link between social origin and occupational destination after education is taken into account. Model 3 approaches this issue through registered place at age 14. Adding the survey's current urban or rural classification raises the coefficient from 3.56 to 3.77 on the same sample, and the coefficient also rises in the province fixed-effect and weighted models. This adjustment does not account for the positive coefficient.
 
 Teacher training and recruitment may help explain how rural graduates became concentrated in public-institution teaching. Later study offers another route into the graduate sample for teachers who began work without a higher-education qualification. In the proposed [county study](discussion.md), I would link first higher-education certificates to first appointments to see how often entry into teaching preceded entry into the graduate population.
 
