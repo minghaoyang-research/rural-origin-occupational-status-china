@@ -27,7 +27,7 @@ Brand and Xie (2010) found larger earnings gains from college among US adults le
 
 Bernardi and Ballarino (2016) examine the link between social origin and occupational destination after education is taken into account. Model 3 approaches this issue through registered place at age 14.
 
-The sample comprises 1,613 respondents who completed their highest reported higher-education qualification, whether junior college, a bachelor's or a postgraduate award, and have a current occupation (1,435 respondents) or a most recent non-farm job (178). Model 3 uses unweighted OLS. It regresses ISEI, scored with the syntax conversion in `ISCO08ConveRsions` (Schwitter, 2023), on qualification tier, rural origin, sex, approximate age and the higher available parental-schooling value, with junior college as the reference tier. Teaching participation uses a linear probability model with the same controls; weighted fits are reported as sensitivity checks.
+The sample comprises 1,613 respondents who completed their highest reported higher-education qualification, whether junior college, a bachelor's or a postgraduate award, and have a current occupation (1,435 respondents) or a most recent non-farm job (178). Model 3 uses unweighted OLS. It regresses syntax ISEI (Schwitter, 2023) on qualification tier, rural origin, sex, approximate age and parental schooling, with junior college as the reference tier. Teaching participation uses a linear probability model with the same controls; weighted fits are reported as sensitivity checks.
 
 The raw ISEI regression and Model 3 use the same 1,613 people. Adjustment raises the rural coefficient from 1.21 to 3.56 because the lower qualification levels, parental schooling and ages of rural graduates pull their raw occupational-score gap downwards, given the positive Model 3 slopes for each of these characteristics. To divide this 2.35-point rise, I multiply each rural–urban mean difference by its full-model slope, reverse the sign and add the terms within each control group.
 
@@ -53,7 +53,7 @@ Parental schooling has the largest component when increments are averaged over t
 
 All rows use the Model 3 controls. Province indicators and clusters use interview location (28 provinces; see [measurement](measurement.md#models-and-inference)). Sources: [model coefficients](../output/tables/model_coefficients.csv), [province models](../output/tables/isei_province.csv), [teaching](../output/tables/occupation_adjusted.csv) and [income](../output/tables/income_comparison.csv).
 
-Adding the survey's current urban or rural classification to Model 3 raises the rural coefficient from 3.56 to 3.77 on the same 1,613 respondents, and the coefficient also rises in the province fixed-effect and weighted models. This adjustment does not account for the positive coefficient.
+I add the survey's current urban or rural classification to examine whether differences in current residence help account for the age-14 rural-origin coefficient. The coefficient rises from 3.56 to 3.77 on the same 1,613 respondents, and also rises in the province fixed-effect and weighted models.
 
 ## Teaching and employer sector
 
@@ -83,7 +83,11 @@ Public institutions (*shiye danwei*) employ 100 of 114 current rural teachers an
 
 Public includes government, public institutions and the military. Source: [sector contrasts](../output/tables/sector_contrasts.csv). The baseline joint test gives p = .005 under HC3 and .052 with province clustering.
 
-The public point estimate stays largest with province indicators and weights. I want to trace how the teachers entered these public institutions.
+The public point estimate stays largest with province indicators and weights.
+
+Some teachers may have entered the graduate population only after they started teaching. Under the [1993 Teachers Law](https://www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/200703/t20070323_780697.html), the minimum qualification for primary-school teachers was graduation from a secondary normal school (中师), and teachers hired on that basis could later complete junior college through in-service study. Among graduates whose highest award came through adult study, 18.6% of rural-origin and 10.6% of urban-origin graduates teach. Among regular junior-college and bachelor's graduates, the figures are 15.4% and 9.3%, and separating the two routes moves the adjusted teaching gap only from 8.94 to 8.98 percentage points. So I doubt that qualifying while in post explains most of the rural excess.
+
+Regular study does not always come before the current job, but it usually does: 25 of 129 regular-route and postgraduate teachers in the [timing data](sensitivity.md#when-teachers-got-their-qualifications) report their highest award more than a year after joining their current workplace. CGSS gives the year of the highest award and how long someone has worked, but not the date of a first higher-education qualification or a first teaching post.
 
 ## Occupational scores and income
 
@@ -97,7 +101,7 @@ Among the same 1,347 positive-income workers, the rural ISEI coefficient is posi
 
 I keep the raw estimate beside Model 3 because rural graduates' lower credentials and parental schooling are themselves part of the inequality I want to describe.
 
-Teacher training and recruitment may help explain how rural graduates became concentrated in public-institution teaching. Later study offers another route into the graduate sample for teachers who began work without a higher-education qualification. In the proposed [county study](discussion.md), I would link first higher-education certificates to first appointments to see how often entry into teaching preceded entry into the graduate population.
+Teacher training and recruitment may help explain how rural graduates became concentrated in public-institution teaching. In the proposed [county study](discussion.md), I would link first higher-education certificates to first appointments to see how often entry into teaching preceded entry into the graduate population.
 
 ## References
 
@@ -110,6 +114,8 @@ Hout, Michael. 1988. “More Universalism, Less Structural Mobility: The America
 National Survey Research Center, Renmin University of China. n.d. *Chinese General Social Survey 2017* [data set]. China National Survey Data Archive, project 94525591. [Data record](https://www.cnsda.org/index.php?id=94525591&r=projects%2Fview).
 
 Schwitter, Nicole. 2023. *ISCO08ConveRsions: Converts ISCO-08 to Job Prestige Scores, ISCO-88 and Job Name*. R package version 0.2.0. [CRAN](https://CRAN.R-project.org/package=ISCO08ConveRsions).
+
+Standing Committee of the National People's Congress. 1993. *中华人民共和国教师法* [Teachers Law of the People's Republic of China]. Effective 1 January 1994. [Text, Article 11](https://www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/200703/t20070323_780697.html).
 
 Torche, Florencia. 2011. “Is a College Degree Still the Great Equalizer? Intergenerational Mobility across Levels of Schooling in the United States.” *American Journal of Sociology* 117(3):763–807. [doi:10.1086/661904](https://doi.org/10.1086/661904).
 

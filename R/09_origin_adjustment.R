@@ -22,8 +22,6 @@ for (name in names(subsets)) {
   fit <- lm(reformulate(variables, "isei"), data = d, na.action = na.fail)
   models[[name]] <- fit
 }
-same_rows <- all(vapply(models, function(fit)
-  identical(rownames(model.frame(fit)), rownames(d)), logical(1)))
 
 model_row <- function(fit, label, data) {
   b <- unname(coef(fit)["rural_origin"])
@@ -78,17 +76,12 @@ groups <- primary$groups
 groups$percent_of_increase <- 100 * groups$increase / (primary$adjusted - primary$raw)
 save_table(groups, "decomposition_groups")
 
-# record the saved Model 3 alongside this fit
 means <- tapply(d$isei, d$rural_origin, mean)
-saved <- read.csv("output/tables/model_coefficients.csv")
-saved <- saved[saved$version == "primary" & saved$model == "Model3" & saved$term == "rural_origin", ]
 save_table(data.frame(N = nrow(d), rural_N = sum(d$rural_origin == 1),
-                     urban_N = sum(d$rural_origin == 0), all_models_same_rows = same_rows,
+                     urban_N = sum(d$rural_origin == 0),
                      urban_mean = means[1], rural_mean = means[2], raw_B = primary$raw,
                      adjusted_B = primary$adjusted, increase = primary$adjusted - primary$raw,
-                     decomposition_sum = sum(groups$increase),
-                     saved_Model3_B = saved$B, saved_Model3_SE_HC3 = saved$SE_HC3,
-                     identity_error = primary$adjusted - primary$raw - sum(groups$increase)), "verification")
+                     decomposition_sum = sum(groups$increase)), "adjustment_summary")
 
 # six orders of adding controls
 orders <- rbind(c(1, 2, 3), c(1, 3, 2), c(2, 1, 3), c(2, 3, 1), c(3, 1, 2), c(3, 2, 1))

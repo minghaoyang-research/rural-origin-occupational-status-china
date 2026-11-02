@@ -36,6 +36,8 @@ Wu, Xiaogang, and Yu Xie. 2003. “Does the Market Pay Off? Earnings Returns to 
 
 Wu, Xiaogang, and Donald J. Treiman. 2007. “Inequality and Equality under Chinese Socialism: The Hukou System and Intergenerational Occupational Mobility.” *American Journal of Sociology* 113(2):415–445. [doi:10.1086/518905](https://doi.org/10.1086/518905).
 
+Standing Committee of the National People's Congress. 1993. *中华人民共和国教师法* [Teachers Law of the People's Republic of China]. Effective 1 January 1994. [Text, Article 11](https://www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/200703/t20070323_780697.html).
+
 Ministry of Education of the People's Republic of China. 1999. *中小学教师继续教育规定* [Regulations on continuing education for primary and secondary school teachers]. Ministry Order 7, 13 September. [Regulation](https://www.moe.gov.cn/srcsite/A02/s5911/moe_621/199909/t19990913_180474.html).
 
 Ministry of Education, Ministry of Finance, Ministry of Personnel, and Central Office of Public Sector Reform. 2006. *关于实施农村义务教育阶段学校教师特设岗位计划的通知* [Notice on implementing the Special Post Teachers programme for rural compulsory schools]. 教师〔2006〕2号, 15 May. [Notice and programme](https://www.moe.gov.cn/srcsite/A10/s7058/200605/t20060515_81624.html).

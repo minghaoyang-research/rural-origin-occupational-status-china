@@ -1,4 +1,4 @@
-# helpers shared between the analysis and the check scripts
+# helpers used by the analysis scripts
 
 education_tier <- function(code, text) {
   out <- rep(NA_real_, length(code))

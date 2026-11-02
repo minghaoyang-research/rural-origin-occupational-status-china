@@ -110,7 +110,7 @@ save_table(data.frame(
   B_baseline = hc3$B_rural[2],
   B_sorting = hc3$B_rural[3],
   change = change,
-  pct_change = pct), "verification")
+  pct_change = pct), "geographic_summary")
 
 writeLines(capture.output(sessionInfo()),
            file.path(out, "session-info.txt"))
