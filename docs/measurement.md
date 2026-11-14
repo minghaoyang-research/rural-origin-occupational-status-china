@@ -143,7 +143,7 @@ For teaching, I also restrict the sample to the 1,435 current non-farm workers, 
 
 The [qualification-category comparison](../output/tables/teaching_routes.csv) uses 1,612 respondents with a known A7A category. The two fits pool or separate adult and regular junior-college and bachelor's qualifications; postgraduate education stays separate. Both control for sex, age and parental education and estimate a single rural-origin coefficient across qualification categories. I repeat them for 1,435 current workers with province indicators and survey weights ([category counts](../output/tables/teaching_route_counts.csv)).
 
-The timing gap is `A7C - (2017 - A59M)`, the year of the highest completed qualification minus estimated entry into the current workplace. A59M is tenure rounded upward, so I allow a one-year margin. Gaps below -1 count as qualification before entry, -1 to +1 as close together, and above +1 as qualification after entry.
+The timing gap is `A7C - (2017 - A59M)`, the year of the highest completed qualification minus estimated entry into the current workplace. A59M is tenure rounded upward, so I allow a one-year margin. Gaps below −1 count as qualification before entry, −1 to +1 as close together, and above +1 as qualification after entry.
 
 The timing sample has 1,369 current workers with a qualification year between birth and 2017 and tenure no longer than their age. I also check a narrower sample requiring qualification at age 17 or older and estimated entry into the current workplace at 15 or older. This removes 16 records. Both sets of counts are kept in [qualification_timing.csv](../output/tables/qualification_timing.csv), under `reported_dates` and `age_screen`.
 
@@ -153,7 +153,7 @@ Cumulative working years omit employment breaks, and current-employer tenure can
 
 ## Income
 
-Income is annual personal labour income for 2016 (A8B). Of the 1,435 with a current occupation, 1,347 report a usable positive amount. Code 9999996 denotes an amount above the questionnaire range. The one such response is excluded and counted separately in the sample flow.
+Income is annual personal labour income for 2016 (A8B). Of the 1,435 with a current occupation, 1,347 report a usable positive amount. Code 9999996 denotes an amount above the questionnaire range. The one such response is excluded, leaving 1,376 with a known amount ([income sample flow](../output/tables/income_sample_flow.csv)).
 
 I fit log income and ISEI with the Model 3 predictors on these 1,347, then add interview-province indicators (`s41`), then repeat both with survey weights. HC3 and province-clustered intervals are in the table.
 

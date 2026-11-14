@@ -53,11 +53,11 @@ Parental schooling has the largest component when increments are averaged over t
 
 All rows use the Model 3 controls. Province indicators and clusters use interview location (28 provinces; see [measurement](measurement.md#models-and-inference)). Sources: [model coefficients](../output/tables/model_coefficients.csv), [province models](../output/tables/isei_province.csv), [teaching](../output/tables/occupation_adjusted.csv) and [income](../output/tables/income_comparison.csv).
 
-I add the survey's current urban or rural classification to examine whether differences in current residence help account for the age-14 rural-origin coefficient. The coefficient rises from 3.56 to 3.77 on the same 1,613 respondents, and also rises in the province fixed-effect and weighted models.
+I add the survey's current urban or rural classification to examine whether differences in current residence help account for the age-14 rural-origin coefficient. The coefficient rises from 3.56 to 3.77 on the same 1,613 respondents, and also rises in the province fixed-effect and weighted models ([main](../output/supplementary/geographic-sorting/sorting_test.csv), [province](../output/supplementary/geographic-sorting/sorting_test_province.csv) and [weighted](../output/supplementary/geographic-sorting/sorting_test_weighted.csv) tables).
 
 ## Teaching and employer sector
 
-The excess teaching share is mostly in primary and secondary schools, with teaching recorded for 17.8% of rural graduates and 10.2% of urban graduates. With province indicators and weights among current workers, the adjusted teaching gap is 5.71 percentage points, with a province-clustered interval of 0.12–11.31.
+The excess teaching share is mostly in primary and secondary schools ([counts](../output/tables/occupation_details.csv)), with teaching recorded for 17.8% of rural graduates and 10.2% of urban graduates. With province indicators and weights among current workers, the adjusted teaching gap is 5.71 percentage points, with a province-clustered interval of 0.12–11.31.
 
 Table 2 puts the teaching shares beside the Model 4 estimates of the ISEI gap within each tier. Both point estimates rise across tiers.
 
@@ -85,7 +85,7 @@ Public includes government, public institutions and the military. Source: [secto
 
 The public point estimate stays largest with province indicators and weights.
 
-Some teachers may have entered the graduate population only after they started teaching. Under the [1993 Teachers Law](https://www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/200703/t20070323_780697.html), the minimum qualification for primary-school teachers was graduation from a secondary normal school (中师), and teachers hired on that basis could later complete junior college through in-service study. Among graduates whose highest award came through adult study, 18.6% of rural-origin and 10.6% of urban-origin graduates teach. Among regular junior-college and bachelor's graduates, the figures are 15.4% and 9.3%, and separating the two routes moves the adjusted teaching gap only from 8.94 to 8.98 percentage points. So I doubt that qualifying while in post explains most of the rural excess.
+Some teachers may have entered the graduate population only after they started teaching. Under the [1993 Teachers Law](https://www.beijing.gov.cn/zhengce/zhengcefagui/qtwj/200703/t20070323_780697.html), the minimum qualification for primary-school teachers was graduation from a secondary normal school (中师), and teachers hired on that basis could later complete junior college through in-service study. Among graduates whose highest award came through adult study, 18.6% of rural-origin and 10.6% of urban-origin graduates teach. Among regular junior-college and bachelor's graduates, the figures are 15.4% and 9.3%, and separating the two routes moves the adjusted teaching gap only from 8.94 to 8.98 percentage points (N = 1,612). So I doubt that qualifying while in post explains most of the rural excess.
 
 Regular study does not always come before the current job, but it usually does: 25 of 129 regular-route and postgraduate teachers in the [timing data](sensitivity.md#when-teachers-got-their-qualifications) report their highest award more than a year after joining their current workplace. CGSS gives the year of the highest award and how long someone has worked, but not the date of a first higher-education qualification or a first teaching post.
 

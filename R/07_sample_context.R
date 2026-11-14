@@ -22,7 +22,6 @@ for (origin in 0:1) {
   }
 }
 selection_by_origin <- do.call(rbind, selection_rows)
-rownames(selection_by_origin) <- NULL
 write.csv(selection_by_origin, "output/tables/selection_by_origin.csv", row.names = FALSE)
 
 # A59J is the organisation type, not bianzhi status (which CGSS doesn't ask directly)
@@ -44,7 +43,6 @@ for (origin in 0:1) for (teaching in c(TRUE, FALSE)) {
   )
 }
 employer_context <- do.call(rbind, employer_rows)
-rownames(employer_context) <- NULL
 write.csv(employer_context, "output/tables/employer_context.csv", row.names = FALSE)
 
 # Feasibility of the employer and childhood-background items, respecting skips.

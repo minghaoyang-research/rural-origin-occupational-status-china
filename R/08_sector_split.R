@@ -107,7 +107,6 @@ sector_outputs <- list(sector_flow = sector_flow, sector_support = sector_suppor
   sector_teaching = sector_teaching, sector_coefficients = sector_coefficients,
   sector_contrasts = sector_contrasts, sector_tests = sector_tests)
 for (nm in names(sector_outputs)) {
-  rownames(sector_outputs[[nm]]) <- NULL
   write.csv(sector_outputs[[nm]], file.path("output/tables", paste0(nm, ".csv")), row.names = FALSE)
 }
 cat("Sector model sample:", nrow(sector_samples$known),

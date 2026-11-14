@@ -25,7 +25,7 @@ The analysis uses the 2017 Chinese General Social Survey (N = 12,582). The analy
 
 The main specification is unweighted OLS with HC3 standard errors. I check against survey weights, province fixed effects and standard errors clustered across 28 interview provinces. Uncertainty in the adjustment decomposition comes from a province cluster bootstrap (1,999 draws). Teaching occupation is modelled with linear probability models. The sector models use interaction terms to separate the rural coefficient within each sector.
 
-The main analysis uses syntax ISEI. The overview mapping and SIOPS provide alternative scores. The occupation allocation varies the reference score to examine how much of the fitted gap is assigned to teaching.
+The main analysis uses syntax ISEI, which follows Ganzeboom's SPSS syntax modules. His earlier overview table and SIOPS provide alternative scores. The occupation allocation varies the reference score to examine how much of the fitted gap is assigned to teaching.
 
 ## Limitations and next steps
 

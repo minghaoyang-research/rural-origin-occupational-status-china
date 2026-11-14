@@ -1,4 +1,4 @@
-# adjustment of the rural coefficient; run after 04
+# adjustment of the rural coefficient
 source("R/03_construct_isei.R")
 d <- as.data.frame(analysis_sample)
 blocks <- list(education = c("edu_bachelor", "edu_postgrad"),

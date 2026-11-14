@@ -7,7 +7,7 @@
 | Occupation | Rural share | Urban share | Adjusted rural difference, percentage points | 95% HC3 interval |
 |---|---:|---:|---:|---|
 | Teaching | 17.8% | 10.2% | 8.93 | 5.22 to 12.64 |
-| Nursing and midwifery | 2.7% | 1.6% | 0.83 | -0.80 to 2.46 |
+| Nursing and midwifery | 2.7% | 1.6% | 0.83 | −0.80 to 2.46 |
 
 [Teaching models](../output/tables/teaching_checks.csv) with current-worker restrictions, province indicators and survey weights.
 
@@ -67,8 +67,8 @@ The [models below](../output/tables/income_comparison.csv) fit both ISEI and inc
 |---|---|---:|---|---|
 | ISEI | Model 3 controls | 3.46 | 1.48 to 5.43 | 1.66 to 5.25 |
 | ISEI | Plus province indicators | 3.28 | 1.22 to 5.33 | 1.51 to 5.05 |
-| Log 2016 labour income | Model 3 controls | -0.103 | -0.187 to -0.019 | -0.223 to 0.016 |
-| Log 2016 labour income | Plus province indicators | -0.064 | -0.141 to 0.013 | -0.138 to 0.011 |
+| Log 2016 labour income | Model 3 controls | −0.103 | −0.187 to −0.019 | −0.223 to 0.016 |
+| Log 2016 labour income | Plus province indicators | −0.064 | −0.141 to 0.013 | −0.138 to 0.011 |
 
 The income coefficient moves towards zero after adding province indicators. Survey weighting gives estimates of −0.088 and −0.065, and the weighted HC3 and province-clustered intervals all include zero.
 
@@ -89,7 +89,7 @@ The [sector models](../output/tables/sector_contrasts.csv) use 1,338 positive-in
 
 With province clustering, the public-sector ISEI intervals are 3.79–8.37, 3.68–8.93 and 3.75–9.67. In the baseline HC3 model, the non-state-and-other gap is 6.07 points below the public gap (interaction −6.07, interval −9.76 to −2.38). For state enterprises, which include only 63 rural-origin workers, the interaction is −4.58 (−10.22 to 1.06).
 
-The income interaction tests are all nonsignificant. In the baseline [model](../output/tables/sector_coefficients.csv), urban-origin enterprise workers score 11.1 and 9.2 ISEI points below urban-origin public workers.
+The income interaction tests are all nonsignificant. In the baseline [model](../output/tables/sector_coefficients.csv), urban-origin workers in state enterprises and in the non-state-and-other group score 11.1 and 9.2 ISEI points below urban-origin public workers.
 
 ### Teaching and income on the same respondents
 
@@ -170,14 +170,14 @@ ISEI coefficients, with junior college as the reference category. The A27F row i
 | Model 3 specification | N | Bachelor | Postgraduate | Rural origin | Female | Parental education |
 |---|---:|---:|---:|---:|---:|---:|
 | Main (syntax ISEI) | 1,613 | 7.78 | 18.34 | 3.56 | 1.59 | 0.29 |
-| Overview ISEI | 1,613 | 6.41 | 15.71 | 2.64 | -1.63 | 0.22 |
+| Overview ISEI | 1,613 | 6.41 | 15.71 | 2.64 | −1.63 | 0.22 |
 | Current occupation only | 1,435 | 7.16 | 17.80 | 3.12 | 1.82 | 0.22 |
 | Regular HE plus postgraduate | 1,121 | 7.94 | 17.73 | 3.22 | 0.14 | 0.22 |
 | Exclude parental Other | 1,602 | 7.87 | 18.37 | 3.64 | 1.59 | 0.31 |
 | Weighted | 1,613 | 8.35 | 18.93 | 3.21 | 1.32 | 0.41 |
 | A27F origin (Model 7) | 1,613 | 7.75 | 18.29 | 3.65 | 1.60 | 0.29 |
-| Outside teaching/nursing/midwifery | 1,361 | 6.86 | 17.30 | 1.44 | -1.68 | 0.38 |
-| Same occupations, overview ISEI | 1,361 | 5.67 | 14.80 | 1.52 | -2.98 | 0.26 |
+| Outside teaching/nursing/midwifery | 1,361 | 6.86 | 17.30 | 1.44 | −1.68 | 0.38 |
+| Same occupations, overview ISEI | 1,361 | 5.67 | 14.80 | 1.52 | −2.98 | 0.26 |
 
 Rural coefficients and 95% province-clustered intervals.
 

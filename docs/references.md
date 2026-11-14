@@ -44,8 +44,6 @@ Ministry of Education, Ministry of Finance, Ministry of Personnel, and Central O
 
 State Council General Office. 2007. *国务院办公厅转发教育部等部门关于教育部直属师范大学师范生免费教育实施办法（试行）的通知* [Trial measures for free teacher education at ministry-affiliated normal universities]. 国办发〔2007〕34号, 9 May. [Notice](https://www.moe.gov.cn/jyb_xxgk/moe_1777/moe_1778/tnull_27694.html).
 
-Ministry of Education of the People's Republic of China. 2010. *确保免费师范毕业生到中小学任教支持师范毕业生专业发展* [Supporting free teacher-education graduates' school appointments and professional development]. Briefing, 26 May. [Transcript](https://www.moe.gov.cn/jyb_xwfb/xw_fbh/moe_2069/s3643/s3781/s3785/201007/t20100708_91444.html).
-
 Wang, Dan, and Manman Gao. 2013. “Educational equality or social mobility: The value conflict between preservice teachers and the Free Teacher Education Program in China.” *Teaching and Teacher Education* 32:66–74. [doi:10.1016/j.tate.2013.01.008](https://doi.org/10.1016/j.tate.2013.01.008).
 
 Gelbach, Jonah B. 2016. “When Do Covariates Matter? And Which Ones, and How Much?” *Journal of Labor Economics* 34(2):509–543. [Article](https://doi.org/10.1086/683668).
@@ -54,7 +52,7 @@ Gelbach, Jonah B. 2016. “When Do Covariates Matter? And Which Ones, and How Mu
 
 Bernardi, Fabrizio, and Gabriele Ballarino, eds. 2016. *Education, Occupation and Social Origin: A Comparative Analysis of the Transmission of Socio-Economic Inequalities*. Cheltenham: Edward Elgar. [doi:10.4337/9781785360459](https://doi.org/10.4337/9781785360459).
 
-Bukodi, Erzsébet, and John H. Goldthorpe. 2013. "Decomposing 'Social Origins': The Effects of Parents' Class, Status, and Education on the Educational Attainment of Their Children." *European Sociological Review* 29(5):1024–1039. [doi:10.1093/esr/jcs079](https://doi.org/10.1093/esr/jcs079).
+Bukodi, Erzsébet, and John H. Goldthorpe. 2013. “Decomposing ‘Social Origins’: The Effects of Parents' Class, Status, and Education on the Educational Attainment of Their Children.” *European Sociological Review* 29(5):1024–1039. [doi:10.1093/esr/jcs079](https://doi.org/10.1093/esr/jcs079).
 
 Bukodi, Erzsébet, and John H. Goldthorpe. 2018. *Social Mobility and Education in Britain: Research, Politics and Policy*. Cambridge: Cambridge University Press. [doi:10.1017/9781108567404](https://doi.org/10.1017/9781108567404).
 

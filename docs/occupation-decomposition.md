@@ -11,7 +11,7 @@ The sample, urban and rural means are close, between 55.95 and 57.17. I also use
 | Sample mean (56.481) | 2.097 | 0.117 | 1.346 | 3.560 | 58.9% |
 | Rural mean (57.167) | 2.036 | 0.112 | 1.412 | 3.560 | 57.2% |
 | 70 | 0.890 | 0.006 | 2.665 | 3.560 | 25.0% |
-| 80 | -0.003 | -0.077 | 3.641 | 3.560 | -0.1% |
+| 80 | −0.003 | −0.077 | 3.641 | 3.560 | −0.1% |
 
 Source: [reference-score table](../output/tables/occupation_reference_sensitivity.csv), calculated by [`R/05_allocation_reference.R`](../R/05_allocation_reference.R).
 

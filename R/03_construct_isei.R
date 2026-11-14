@@ -1,7 +1,6 @@
 # 03 Current/most recent non-farm occupation and ISEI
 
 source("R/02_construct_sample.R")
-print(packageVersion("ISCO08ConveRsions"))
 stopifnot(packageVersion("ISCO08ConveRsions") == "0.2.0")
 
 occupation <- choose_occupation(as.numeric(dat$isco08_a59), as.numeric(dat$isco08_a60))

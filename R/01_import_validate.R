@@ -10,5 +10,5 @@ required <- c("a2", "a31", "a7a", "a7aa", "a7b", "a27h", "a27f",
               "a89b", "a90b", "a53", "a53a", "a53aa", "a58", "isco08_a59", "isco08_a60",
               "weight", "s41", "a7c", "a59c", "a59m", "a8b",
               "a59a", "a59b", "a59j", "a59k", "a89d", "a89g", "a89h",
-              "a90d", "a90g", "a90h")
+              "a90d", "a90g", "a90h", "isurban")
 if (!all(required %in% names(dat))) stop("Survey variables needed for the analysis are missing.")

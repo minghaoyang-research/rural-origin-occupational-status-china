@@ -90,7 +90,6 @@ for (status in levels(completion)) {
 }
 completion_status <- do.call(rbind, completion_status)
 stopifnot(!anyNA(completion))
-rownames(completion_status) <- NULL
 education_origin <- as.data.frame(table(education = d$edu_lvl, origin = d$rural_origin))
 education_origin$mean_isei <- NA_real_
 education_origin$sd_isei <- NA_real_
@@ -201,7 +200,6 @@ isei_province <- do.call(rbind, lapply(names(isei_province_models), function(ver
                    province_FE = "factor(s41)" %in% attr(terms(fit), "term.labels"), N = nobs(fit),
                    residual_df = df.residual(fit)), tab[rural_columns])
 }))
-rownames(isei_province) <- NULL
 
 # Rural-minus-urban differences from Model 4
 fit <- primary_models$Model4
@@ -290,7 +288,6 @@ for (reference in names(refs)) {
     group_N = nrow(d), model_N = nobs(m3), B = b_rural)
 }
 occupation_contributions <- do.call(rbind, occupation_contributions)
-rownames(occupation_contributions) <- NULL
 occupation_contributions$share_of_total <- occupation_contributions$B / b_rural
 
 # current teaching with province FE and weights
@@ -313,7 +310,6 @@ for (i in seq_along(teaching_models)) {
 }
 teaching_checks <- do.call(rbind, teaching_checks)
 names(teaching_checks)[c(1, 3)] <- c("specification", "adjusted_difference_pp")
-rownames(teaching_checks) <- NULL
 
 # separate adult and regular qualifications
 teaching_routes_data <- d[!is.na(d$education_route), ]
@@ -342,7 +338,6 @@ for (i in seq_along(teaching_route_models)) {
 }
 teaching_routes <- do.call(rbind, teaching_routes)
 names(teaching_routes)[names(teaching_routes) == "B"] <- "adjusted_difference_pp"
-rownames(teaching_routes) <- NULL
 
 teaching_route_counts <- list()
 for (sample in c("full", "current")) {
@@ -357,7 +352,6 @@ for (sample in c("full", "current")) {
   }
 }
 teaching_route_counts <- do.call(rbind, teaching_route_counts)
-rownames(teaching_route_counts) <- NULL
 
 occ_origin <- as.data.frame(table(occupation = d$occ_group, origin = d$rural_origin))
 occ_origin$percent <- 100 * occ_origin$Freq / as.numeric(table(d$rural_origin)[as.character(occ_origin$origin)])
@@ -439,13 +433,10 @@ tenure <- as.numeric(d$a59m)
 work_years <- as.numeric(d$a59c)
 timing_ok <- d$occ_source == "current_A59" & year_qualified %in% 1900:2017 &
              tenure %in% 0:60 & tenure <= d$age & year_qualified >= d$a31_num
-timing_ok[is.na(timing_ok)] <- FALSE
 cumulative_ok <- d$occ_source == "current_A59" & year_qualified %in% 1900:2017 &
                  work_years %in% 0:60 & work_years <= d$age & year_qualified >= d$a31_num
-cumulative_ok[is.na(cumulative_ok)] <- FALSE
 both_dates <- timing_ok & cumulative_ok
 consistent_dates <- both_dates & work_years >= tenure
-consistent_dates[is.na(consistent_dates)] <- FALSE
 timing_sets <- list(
   reported_dates = timing_ok,
   age_screen = timing_ok & year_qualified - d$a31_num >= 17 & d$age - tenure >= 15,
@@ -479,7 +470,6 @@ for (check in names(timing_sets)) for (g in names(timing_groups)) {
              urban_N = sum(origin == 0), urban_later = sum(origin == 0 & gap > 1))
 }
 qual_timing <- do.call(rbind, qual_timing)
-rownames(qual_timing) <- NULL
 
 # compare later qualifications by origin within each teaching route
 qual_timing$fisher_p <- NA_real_

@@ -23,7 +23,7 @@ reference_results <- lapply(names(refs), function(label) {
   b <- base$B - shift * unname(gamma[base$occupation])
   data.frame(reference = label, reference_score = refs[[label]], occupation = base$occupation,
              model_N = base$model_N, membership_B = unname(gamma[base$occupation]), B = b,
-             share_of_total = if (total == 0) NA_real_ else b / total)
+             share_of_total = b / total)
 })
 reference_results <- do.call(rbind, reference_results)
 write.csv(reference_results, "output/tables/occupation_reference_sensitivity.csv", row.names = FALSE)
