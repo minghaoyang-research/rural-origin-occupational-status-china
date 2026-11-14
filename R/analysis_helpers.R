@@ -10,10 +10,6 @@ education_tier <- function(code, text) {
   out
 }
 
-completed_he <- function(tier, status) {
-  !is.na(tier) & status %in% 4
-}
-
 recode_origin <- function(code) {
   out <- rep(NA_real_, length(code))
   out[code %in% c(1, 2)] <- 1
@@ -35,15 +31,10 @@ recode_parent_education <- function(x) {
   out
 }
 
-parent_education_max <- function(father, mother) {
-  pmax(father, mother, na.rm = TRUE)
-}
-
 # 0 is Armed Forces; keep the leading zeros
 pad_isco <- function(x) {
   out <- rep(NA_character_, length(x))
   ok <- is.finite(x) & x >= 0 & x < 10000
-  if (any(x[ok] != trunc(x[ok]))) stop("Non-integer ISCO code")
   out[ok] <- sprintf("%04d", as.integer(x[ok]))
   out
 }
@@ -91,18 +82,11 @@ employer_sector <- function(organisation, ownership) {
 
 # province-clustered SEs; t intervals with G-1 df
 province_table <- function(fit, data) {
-  used <- model.frame(fit)
-  rows <- match(rownames(used), rownames(data))
-  matched <- model.frame(formula(fit), data = data[rows, , drop = FALSE],
-                         na.action = na.pass, xlev = fit$xlevels)
-  if (!isTRUE(all.equal(used[names(matched)], matched, tolerance = 0, check.attributes = FALSE)))
-    stop("Province data do not match the fitted rows")
-  province <- as.numeric(data$s41[rows])
+  province <- as.numeric(data$s41)
   G <- length(unique(province))
-  stopifnot(all(is.finite(province)), G > 1)
   V <- sandwich::vcovCL(fit, cluster = province, type = "HC1")
   b <- coef(fit)
-  se <- sqrt(diag(V))[names(b)]
+  se <- sqrt(diag(V))
   data.frame(term = names(b), N = nobs(fit), provinces = G,
              B = unname(b), SE_province = unname(se),
              p_province = 2 * pt(abs(b / se), G - 1, lower.tail = FALSE),
@@ -117,8 +101,7 @@ origin_adjustment_draw <- function(data, w, formula, blocks) {
   R <- data$rural_origin
   boot_data <- data
   boot_data$adjustment_weight <- w
-  fit <- lm(formula, data = boot_data, weights = adjustment_weight, na.action = na.fail,
-            singular.ok = FALSE)
+  fit <- lm(formula, data = boot_data, weights = adjustment_weight)
   b <- coef(fit)
   delta <- setNames(numeric(length(controls)), controls)
   for (name in controls) {

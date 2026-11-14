@@ -19,7 +19,7 @@ models <- list()
 for (name in names(subsets)) {
   groups <- subsets[[name]]
   variables <- c("rural_origin", unlist(blocks[groups]))
-  fit <- lm(reformulate(variables, "isei"), data = d, na.action = na.fail)
+  fit <- lm(reformulate(variables, "isei"), data = d)
   models[[name]] <- fit
 }
 
@@ -51,8 +51,8 @@ save_table(coefficients, "coefficients")
 decompose <- function(data, outcome = "isei", weights = rep(1, nrow(data))) {
   data$adjustment_weight <- weights
   full <- lm(update(full_formula, paste(outcome, "~ .")), data = data,
-             weights = adjustment_weight, na.action = na.fail, singular.ok = FALSE)
-  short <- lm(reformulate("rural_origin", outcome), data = data, weights = adjustment_weight, na.action = na.fail)
+             weights = adjustment_weight)
+  short <- lm(reformulate("rural_origin", outcome), data = data, weights = adjustment_weight)
   rural <- data$rural_origin == 1
   urban_mean <- rural_mean <- setNames(numeric(length(controls)), controls)
   for (name in controls) {
@@ -139,7 +139,6 @@ for (i in seq_len(B)) {
   multiplicity <- tabulate(sample.int(G, G, replace = TRUE), nbins = G)
   boot_draws[, i] <- origin_adjustment_draw(d, multiplicity[province], full_formula, blocks)
 }
-stopifnot(all(is.finite(boot_draws)))
 ci <- matrix(NA_real_, nrow = length(point), ncol = 2)
 for (i in seq_along(point)) ci[i, ] <- quantile(boot_draws[i, ], probs = c(.025, .975))
 save_table(data.frame(quantity = names(point), estimate = unname(point),

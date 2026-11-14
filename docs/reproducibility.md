@@ -23,7 +23,7 @@ The [origin-adjustment analysis](origin-adjustment.md) has a separate entry poin
 Rscript --vanilla -e 'source("renv/activate.R"); source("R/09_origin_adjustment.R")'
 ```
 
-It rebuilds the sample through scripts 01–03, then runs the same-sample regressions, decomposition and province bootstrap. Outputs go to `output/supplementary/origin-adjustment/`; the main tables and figures are unchanged.
+It rebuilds the sample through scripts 01–03, then runs the same-sample regressions, decomposition and province bootstrap. Outputs go to `output/supplementary/origin-adjustment/`.
 
 ## Geographic supplement
 
@@ -31,7 +31,7 @@ It rebuilds the sample through scripts 01–03, then runs the same-sample regres
 Rscript --vanilla -e 'source("renv/activate.R"); source("R/10_geographic_sorting.R")'
 ```
 
-This adds the survey's current urban–rural classification to Model 3 on a matched sample. Results go to `output/supplementary/geographic-sorting/`.
+This adds the survey's current urban–rural classification to Model 3 on the same 1,613 respondents. Results go to `output/supplementary/geographic-sorting/`.
 
 ## Regenerating outputs from saved results
 

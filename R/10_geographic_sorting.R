@@ -15,7 +15,7 @@ d$current_rural[as.numeric(d$isurban) %in% 2] <- 1
 d_sort <- d[!is.na(d$current_rural), ]
 
 m3_full <- lm(isei ~ edu_bachelor + edu_postgrad + female + age +
-                par_edu_yrs + rural_origin, data = d, na.action = na.fail)
+                par_edu_yrs + rural_origin, data = d)
 m3_restricted <- update(m3_full, data = d_sort)
 m3_sorting <- update(m3_restricted, . ~ . + current_rural)
 

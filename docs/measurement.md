@@ -44,7 +44,7 @@ The conversion takes four-digit ISCO strings, including leading zeros such as `0
 
 Rural and urban origin use registered place at age 14 (A27H). The main models group villages (1) and townships (2) as rural; county seats (3), suburbs (4) and city districts (5) are urban. I also fit a model with separate village and township categories. In Model 7 I use residence at age 14 (A27F) with the same split, to see whether residence gives a different rural-origin estimate from registered place.
 
-Hao, Hu and Lo ([2014](references.md)) distinguish hukou status from pre-tertiary school location. This project uses A27H registered place at age 14, a separate measure.
+Hao, Hu and Lo ([2014](references.md)) distinguish hukou status from pre-tertiary school location. A27H describes where the hukou was registered, not whether it was agricultural or non-agricultural.
 
 ## Parental education
 

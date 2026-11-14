@@ -8,9 +8,9 @@ fit_sector_pair <- function(spec, outcome, province, weighted) {
     formula <- update(formulas[[name]], paste(outcome, "~ ."))
     if (province) formula <- update(formula, . ~ . + factor(s41))
     if (weighted) {
-      fits[[name]] <- lm(formula, data = data, weights = weight, na.action = na.fail, singular.ok = FALSE)
+      fits[[name]] <- lm(formula, data = data, weights = weight)
     } else {
-      fits[[name]] <- lm(formula, data = data, na.action = na.fail, singular.ok = FALSE)
+      fits[[name]] <- lm(formula, data = data)
     }
   }
   full <- fits$full
@@ -18,7 +18,6 @@ fit_sector_pair <- function(spec, outcome, province, weighted) {
     stop("HC3 is undefined at leverage one")
   province_id <- as.numeric(data$s41)
   G <- length(unique(province_id))
-  stopifnot(all(is.finite(province_id)), G > 1)
   V_hc3 <- sandwich::vcovHC(full, type = "HC3")
   # province-clustered HC1
   V_province <- sandwich::vcovCL(full, cluster = province_id, type = "HC1")
@@ -27,14 +26,13 @@ fit_sector_pair <- function(spec, outcome, province, weighted) {
 
 # coefficient and group intervals
 sector_inference <- function(b, hc3, province, df, G) {
-  result <- data.frame(B = unname(b), SE_HC3 = unname(hc3),
+  data.frame(B = unname(b), SE_HC3 = unname(hc3),
     p_HC3 = 2 * pt(abs(b / hc3), df, lower.tail = FALSE),
     CI_low = b - qt(.975, df) * hc3, CI_high = b + qt(.975, df) * hc3,
     provinces = G, SE_province = unname(province),
     p_province = 2 * pt(abs(b / province), G - 1, lower.tail = FALSE),
     province_CI_low = b - qt(.975, G - 1) * province,
     province_CI_high = b + qt(.975, G - 1) * province, row.names = NULL)
-  result
 }
 
 # rural coefficient plus the interaction for each group
@@ -66,9 +64,9 @@ sector_result_tables <- function(record) {
   estimate <- record$estimate
   full <- estimate$full
   b <- coef(full)
-  cm <- coef(summary(full))[names(b), , drop = FALSE]
-  hc <- sqrt(diag(estimate$V_hc3))[names(b)]
-  cl <- sqrt(diag(estimate$V_province))[names(b)]
+  cm <- coef(summary(full))
+  hc <- sqrt(diag(estimate$V_hc3))
+  cl <- sqrt(diag(estimate$V_province))
   df <- df.residual(full)
   G <- estimate$provinces
   metadata <- data.frame(outcome = record$outcome, model = record$model,

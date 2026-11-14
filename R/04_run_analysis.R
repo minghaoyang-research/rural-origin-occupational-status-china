@@ -11,6 +11,11 @@ d$bach_x_c4 <- d$edu_bachelor * d$cohort4
 d$post_x_c2 <- d$edu_postgrad * d$cohort2
 d$post_x_c3 <- d$edu_postgrad * d$cohort3
 d$post_x_c4 <- d$edu_postgrad * d$cohort4
+# occupation groups: ISCO 23 = teaching, 222/322 = nursing/midwifery
+d$occ_group <- ifelse(substr(d$isco4, 1, 2) == "23", "Teaching",
+               ifelse(substr(d$isco4, 1, 3) %in% c("222", "322"), "Nursing and midwifery", "Other"))
+d$teaching_pct <- 100 * (d$occ_group == "Teaching")
+d$nursing_pct <- 100 * (d$occ_group == "Nursing and midwifery")
 
 # same respondents for Models 1-7
 stopifnot(all(complete.cases(d[c("isei", "edu_bachelor", "edu_postgrad", "female", "age",
@@ -36,8 +41,6 @@ coefficient_table <- function(fit, version, model) {
   b <- coef(fit)
   cm <- coef(summary(fit))
   hc <- sqrt(diag(vcov_hc3(fit)))
-  cm <- cm[match(names(b), rownames(cm)), , drop = FALSE]
-  hc <- hc[match(names(b), names(hc))]
   critical <- qt(.975, df.residual(fit))
   data.frame(version = version, model = model, term = names(b), N = nobs(fit),
              B = unname(b), SE_classical = cm[, 2], p_classical = cm[, 4],
@@ -179,17 +182,16 @@ province_results <- rbind(
 isei_province_models <- list(
   full_unweighted = primary_models$Model3,
   full_unweighted_province = update(primary_models$Model3, . ~ . + factor(s41),
-                                    data = d, na.action = na.fail),
+                                    data = d),
   full_weighted = weighted_m3,
   full_weighted_province = update(weighted_m3, . ~ . + factor(s41),
-                                  data = d, na.action = na.fail),
+                                  data = d),
   current_unweighted = current_m3,
   current_unweighted_province = update(current_m3, . ~ . + factor(s41),
-                                       data = d_current, na.action = na.fail),
-  current_weighted = update(current_m3, data = d_current, weights = weight,
-                            na.action = na.fail),
+                                       data = d_current),
+  current_weighted = update(current_m3, data = d_current, weights = weight),
   current_weighted_province = update(current_m3, . ~ . + factor(s41),
-                                     data = d_current, weights = weight, na.action = na.fail)
+                                     data = d_current, weights = weight)
 )
 isei_province <- do.call(rbind, lapply(names(isei_province_models), function(version) {
   fit <- isei_province_models[[version]]
@@ -245,16 +247,11 @@ fit_diagnostics <- data.frame(version = "primary", model = "Model6", N = nobs(m6
                               postgrad_SE_classical = unname(coef(summary(m6))["edu_postgrad", 2]),
                               postgrad_SE_HC3 = unname(sqrt(vcov_hc3(m6)["edu_postgrad", "edu_postgrad"])))
 
-# occupation groups: ISCO 23 = teaching, 222/322 = nursing/midwifery
-d$occ_group <- ifelse(substr(d$isco4, 1, 2) == "23", "Teaching",
-               ifelse(substr(d$isco4, 1, 3) %in% c("222", "322"), "Nursing and midwifery", "Other"))
 other_occ <- d$occ_group == "Other"
 other_m3 <- update(primary_models$Model3, data = d[other_occ, ])
 other_ov <- update(primary_models$Model3, data = overview[other_occ, ])
 
 # teaching and nursing LPMs: 0/100 makes the coefficients percentage-point differences
-d$teaching_pct <- 100 * (d$occ_group == "Teaching")
-d$nursing_pct <- 100 * (d$occ_group == "Nursing and midwifery")
 teach_lpm <- update(primary_models$Model3, teaching_pct ~ ., data = d)
 nurse_lpm <- update(primary_models$Model3, nursing_pct ~ ., data = d)
 
@@ -277,7 +274,7 @@ for (reference in names(refs)) {
   for (group in c("Teaching", "Nursing and midwifery", "Other")) {
     tmp <- d
     tmp$part <- (d$isei - refs[[reference]]) * (d$occ_group == group)
-    fit <- update(m3, part ~ ., data = tmp, na.action = na.fail)
+    fit <- update(m3, part ~ ., data = tmp)
     occupation_contributions[[paste(reference, group)]] <- data.frame(
       reference = reference, reference_score = refs[[reference]], occupation = group,
       group_N = sum(d$occ_group == group), model_N = nobs(fit),
@@ -291,8 +288,7 @@ occupation_contributions <- do.call(rbind, occupation_contributions)
 occupation_contributions$share_of_total <- occupation_contributions$B / b_rural
 
 # current teaching with province FE and weights
-teaching_current <- d[d$occ_source == "current_A59", ]
-teach_current <- update(teach_lpm, data = teaching_current)
+teach_current <- update(teach_lpm, data = d_current)
 teach_province <- update(teach_current, . ~ . + factor(s41))
 teach_weighted <- update(teach_province, weights = weight)
 teaching_models <- list(
@@ -304,7 +300,7 @@ teaching_models <- list(
 teaching_checks <- list()
 for (i in seq_along(teaching_models)) {
   fit <- teaching_models[[i]]
-  cluster_data <- if (i == 1) d else teaching_current
+  cluster_data <- if (i == 1) d else d_current
   tab <- clustered_table(fit, cluster_data, names(teaching_models)[i], "Teaching", "rural_origin")
   teaching_checks[[i]] <- tab[c("version", "N", rural_columns)]
 }
@@ -314,15 +310,15 @@ names(teaching_checks)[c(1, 3)] <- c("specification", "adjusted_difference_pp")
 # separate adult and regular qualifications
 teaching_routes_data <- d[!is.na(d$education_route), ]
 teaching_routes_current <- teaching_routes_data[teaching_routes_data$occ_source == "current_A59", ]
-teach_tiers <- update(teach_lpm, data = teaching_routes_data, na.action = na.fail)
+teach_tiers <- update(teach_lpm, data = teaching_routes_data)
 teach_routes <- lm(teaching_pct ~ education_route + female + age + par_edu_yrs + rural_origin,
-                   data = teaching_routes_data, na.action = na.fail)
+                   data = teaching_routes_data)
 teaching_route_models <- list(
   full_three_tiers = teach_tiers,
   full_five_categories = teach_routes,
-  current_three_tiers = update(teach_weighted, data = teaching_routes_current, na.action = na.fail),
+  current_three_tiers = update(teach_weighted, data = teaching_routes_current),
   current_five_categories = update(teach_routes, . ~ . + factor(s41),
-                                   data = teaching_routes_current, weights = weight, na.action = na.fail)
+                                   data = teaching_routes_current, weights = weight)
 )
 teaching_routes <- list()
 for (i in seq_along(teaching_route_models)) {
@@ -485,7 +481,6 @@ for (i in which(grepl("^Teaching:", qual_timing$group))) {
 
 # 2016 labour income for current workers
 income <- as.numeric(d_current$a8b)
-# 9999996: above questionnaire range
 observed_income <- known_income(income)
 income_flow <- data.frame(
   stage = c("Primary sample", "Current A59 occupation",

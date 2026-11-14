@@ -36,6 +36,6 @@ Resampling the 28 [interview provinces](measurement.md#models-and-inference) wit
 
 ## Running the supplement
 
-Run the [supplement command](reproducibility.md#adjustment-supplement) from a fresh R process. Script 09 rebuilds the sample through scripts 01–03 and writes to `output/supplementary/origin-adjustment/`.
+Run the [supplement command](reproducibility.md#adjustment-supplement) from a fresh R process.
 
 Gelbach, Jonah B. 2016. “When Do Covariates Matter? And Which Ones, and How Much?” *Journal of Labor Economics* 34(2):509–543. [Article](https://doi.org/10.1086/683668).
