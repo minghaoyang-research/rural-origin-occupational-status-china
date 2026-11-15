@@ -16,7 +16,7 @@ Hao, Lingxin, Alfred Hu, and Jamie Lo. 2014. “Two Aspects of the Rural-Urban D
 
 International Labour Office. 2012. *International Standard Classification of Occupations: ISCO-08. Volume 1: Structure, Group Definitions and Correspondence Tables*. Geneva: ILO. [Classification](https://isco.ilo.org/en/isco-08/). The coding-level lookup and its source are recorded in [data/reference](../data/reference/README.md).
 
-Li, Chunling. 2005. “当代中国社会的声望分层——职业声望与社会经济地位指数测量” [Prestige stratification in contemporary China: measurement of occupational prestige and socioeconomic status]. *社会学研究* [Sociological Studies] 2005(2):74–102. [Article](https://shxyj.ajcass.com/Admin/UploadFile/20130926008/2015-08-24/Issue/asqbvcrk.pdf).
+Li, Chunling. 2005. “当代中国社会的声望分层——职业声望与社会经济地位指数测量” [Prestige stratification in contemporary China: measurement of occupational prestige and socioeconomic status]. *社会学研究* [Sociological Studies] 2005(2):74–102. [Article](https://web.archive.org/web/20250124160241/https://shxyj.ajcass.com/Admin/UploadFile/20130926008/2015-08-24/Issue/asqbvcrk.pdf).
 
 Ministry of Education of the People's Republic of China. 2002. *教育部关于加强专科以上学历小学教师培养工作的几点意见* [Guidance on preparing primary teachers with junior-college qualifications or above]. 教师〔2002〕4号, 10 September. [Policy text](https://www.moe.gov.cn/srcsite/A10/s7058/200209/t20020910_162697.html).
 
