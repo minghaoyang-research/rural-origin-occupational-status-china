@@ -15,6 +15,14 @@ Rscript --vanilla -e 'source("renv/activate.R"); source("R/04_run_analysis.R")'
 
 The entry point calls the import, sample and scoring scripts, then the allocation, plotting, sample-context and sector scripts. It writes 40 CSVs, four figures and `docs/session-info.txt`. Rerunning replaces these outputs. In RStudio, opening [the project](../rural-origin-and-occupations-china.Rproj) activates the library through `.Rprofile`, with workspace loading and saving disabled.
 
+## All outputs
+
+```sh
+Rscript --vanilla R/run_all.R
+```
+
+This runs the main analysis, the four supplements below and the README figure in turn, each in a fresh process. On a 2021 MacBook Pro it takes about 70 seconds once the packages are installed.
+
 ## Adjustment supplement
 
 The [origin-adjustment analysis](origin-adjustment.md) has a separate entry point.

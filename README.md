@@ -43,15 +43,15 @@ Possible routes include teacher training programmes that targeted rural students
 
 ## Reading the project
 
-The [research note](docs/research-note.md) presents the earlier analyses of occupational status, teaching and income. The [adjustment supplement](docs/origin-adjustment.md) explains why controlling for education and family background raises rather than lowers the rural coefficient. [Further results](docs/sensitivity.md) and [measurement notes](docs/measurement.md) cover the remaining tables and variable definitions. [Reproducibility](docs/reproducibility.md) describes how to run the analysis.
+The [research note](docs/research-note.md) presents the earlier analyses of occupational status, teaching and income. The [adjustment supplement](docs/origin-adjustment.md) explains why controlling for education and family background raises rather than lowers the rural coefficient. The [occupation allocation](docs/occupation-decomposition.md) shows how much of the rural coefficient is assigned to teaching at different reference scores. [Further results](docs/sensitivity.md) and [measurement notes](docs/measurement.md) cover the remaining tables and variable definitions. [Reproducibility](docs/reproducibility.md) describes how to run the analysis.
 
 ## Running the code
 
 R 4.4.3 with package versions in [renv.lock](renv.lock). The CGSS 2017 data are not distributed here; see [data/raw](data/raw/README.md).
 
-The commands below run the main analysis. To rebuild all outputs, also run the four supplements and the figure script in [reproducibility](docs/reproducibility.md).
+The commands below restore the packages and rebuild every output. [Reproducibility](docs/reproducibility.md) lists the scripts one by one.
 
 ```sh
 Rscript --vanilla -e 'source("renv/activate.R"); renv::restore(prompt = FALSE)'
-Rscript --vanilla -e 'source("renv/activate.R"); source("R/04_run_analysis.R")'
+Rscript --vanilla R/run_all.R
 ```
