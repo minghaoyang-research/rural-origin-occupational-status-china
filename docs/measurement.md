@@ -153,7 +153,7 @@ Cumulative working years omit employment breaks, and current-employer tenure can
 
 ## Income
 
-Income is annual personal labour income for 2016 (A8B). Of the 1,435 with a current occupation, 1,347 report a usable positive amount. Code 9999996 denotes an amount above the questionnaire range. The one such response is excluded, leaving 1,376 with a known amount ([income sample flow](../output/tables/income_sample_flow.csv)).
+Income is annual personal labour income for 2016 (A8B). Of the 1,435 with a current occupation, 1,347 report a usable positive amount. Another 29 report zero income and 59 lack an exact amount, including one coded 9999996 for an amount above the questionnaire range ([income sample flow](../output/tables/income_sample_flow.csv)).
 
 I fit log income and ISEI with the Model 3 predictors on these 1,347, then add interview-province indicators (`s41`), then repeat both with survey weights. HC3 and province-clustered intervals are in the table.
 
