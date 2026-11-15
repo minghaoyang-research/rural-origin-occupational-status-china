@@ -27,12 +27,12 @@ panel <- function(z, main, xlab, margin) {
   abline(v = 0, lty = 2, col = "grey70")
   segments(z$low, rows, z$high, rows, lwd = 2)
   points(z$B, rows, pch = 16)
-  text(z$B, rows + .2, sprintf("%.2f", z$B), cex = .85)
+  text(z$B, rows, sprintf("%.2f", z$B), pos = 3, cex = .85)
 }
 
 dir.create("output/figures", recursive = TRUE, showWarnings = FALSE)
-png("output/figures/rural_coefficient.png", width = 2400, height = 1000, res = 200)
-par(mfrow = c(1, 2), mar = c(5, 12, 3, 1), oma = c(2, 0, 0, 0))
+png("output/figures/rural_coefficient.png", width = 1700, height = 1400, res = 200)
+par(mfrow = c(2, 1), mar = c(4.5, 13, 2.5, 2), oma = c(2, 0, 0, 0))
 panel(controls, sprintf("Controls added (%s graduates)", format(raw$N, big.mark = ",")),
       "Rural - urban ISEI difference (95% HC3 CI)", .4)
 panel(rankings, sprintf("Occupation scored by (%s workers)", format(scores$N[1], big.mark = ",")),

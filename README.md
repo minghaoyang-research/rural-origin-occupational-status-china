@@ -3,6 +3,8 @@
 Minghao Yang<br>
 MA (Hons) Sociology, University of Edinburgh
 
+My writing sample, *Rural Origin, Occupational Status and Labour Income among Graduates in China*, uses the sample and models in this repository. The [table guide](docs/writing-sample.md) links each table to its script and saved output.
+
 In CGSS 2017, 13% of rural-origin respondents aged 25 to 60 completed their highest reported qualification at junior-college level or above. For urban-origin respondents the figure is 46.5%. Among 1,613 graduates with a current or previous occupation outside farming, does rural origin predict lower occupational status?
 
 I expected it would. After adjusting for qualification tier, parental schooling, sex and age, rural graduates score 3.56 points higher on the ISEI occupational status scale (95% CI 1.8 to 5.4), about 0.2 standard deviations. The unadjusted gap is only 1.21 points. Adjustment raises the estimate in part because rural graduates hold lower qualifications and come from families with less schooling. I decompose this 2.35-point change following Gelbach (2016). The qualification tier accounts for roughly 42%.
@@ -37,7 +39,7 @@ Possible routes include teacher training programmes that targeted rural students
 
 ## Reading the project
 
-The [research note](docs/research-note.md) presents the argument. The [adjustment supplement](docs/origin-adjustment.md) explains why controlling for education and family background raises rather than lowers the rural coefficient. [Further results](docs/sensitivity.md) and [measurement notes](docs/measurement.md) cover the remaining tables and variable definitions. [Reproducibility](docs/reproducibility.md) describes how to run the analysis. [Writing sample tables](docs/writing-sample.md) gives the script and output behind each table in my writing sample.
+The [research note](docs/research-note.md) presents the earlier analyses of occupational status, teaching and income. The [adjustment supplement](docs/origin-adjustment.md) explains why controlling for education and family background raises rather than lowers the rural coefficient. [Further results](docs/sensitivity.md) and [measurement notes](docs/measurement.md) cover the remaining tables and variable definitions. [Reproducibility](docs/reproducibility.md) describes how to run the analysis.
 
 ## Running the code
 
