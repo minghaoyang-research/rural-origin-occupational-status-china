@@ -3,7 +3,11 @@
 Minghao Yang<br>
 MA (Hons) Sociology, University of Edinburgh
 
+Among Chinese graduates with similar qualifications and family background, those of rural origin hold jobs that score higher on ISEI, an international index that ranks occupations using the education and earnings of the people in them. Their reported earnings show no such advantage. I trace much of the difference to teaching: rural graduates more often teach, mostly in primary and secondary schools, and the index scores teaching highly. The advantage is much smaller when the same jobs are ranked by the schooling or earnings of the Chinese workers who hold them.
+
 My paper, *Rural Origin, Occupational Status and Labour Income among Graduates in China*, uses the sample and models in this repository. The [results guide](docs/results-guide.md) links each result to its script and saved output.
+
+## Findings
 
 In CGSS 2017, 13% of rural-origin respondents aged 25 to 60 completed their highest reported qualification at junior-college level or above. For urban-origin respondents the figure is 46.5%. Among 1,613 graduates with a current or previous occupation outside farming, does rural origin predict lower occupational status?
 
@@ -19,7 +23,7 @@ ISEI is built from international data. When I score each occupation group instea
 
 ## About this project
 
-This started as my undergraduate dissertation at Edinburgh on education tiers, rural origin and birth cohorts. The occupation decomposition, the sector analysis and the adjustment supplement were developed after submission.
+This started as my undergraduate dissertation at Edinburgh on education tiers, rural origin and birth cohorts. The occupation decomposition, the sector analysis, the adjustment supplement, and the analyses of teaching, income and occupational scores were developed after submission.
 
 Teaching is where I want to look next. Rural graduates are more likely to hold teaching jobs, which score highly on ISEI, and I want to know how they entered those jobs when so few rural-origin respondents in the wider sample had completed higher education.
 
