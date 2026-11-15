@@ -9,9 +9,11 @@ I expected it would. After adjusting for qualification tier, parental schooling,
 
 Teaching is reported by 17.8% of rural-origin and 10.2% of urban-origin graduates, with an adjusted difference of 8.9 percentage points. Adding a teaching indicator lowers the rural coefficient from 3.56 to 1.65. Among current workers with positive income and a known employer sector, the adjusted gap favouring rural graduates is 6.1 ISEI points in the public sector. Outside the public sector the estimates are smaller and both intervals include zero. But within public-sector teaching the gap is −0.06 points (CI −1.95 to 1.83). The public-sector gap may have more to do with which jobs rural graduates enter than with a score difference among teachers.
 
-Among 1,347 current workers with positive 2016 labour income, rural origin predicts slightly lower log income. The unweighted interval excludes zero, but with survey weights or province clustering it widens to include zero. I see higher occupational scores without an accompanying earnings advantage.
+Among 1,347 current workers with positive 2016 labour income, rural origin predicts slightly lower log income. The unweighted interval excludes zero, but with survey weights or province clustering it widens to include zero. Adjusting for occupation and employer on the same workers reduces the rural ISEI coefficient from 3.46 to 0.30, partly by construction, since ISEI is assigned from the occupation code. The income coefficient scarcely moves (−0.103 to −0.106). I see higher occupational scores without an accompanying earnings advantage.
 
-![Teaching among urban- and rural-origin graduates](output/figures/teaching_by_origin.png)
+ISEI is built from international data. When I score each occupation group instead by the schooling or earnings of the CGSS workers in it, the rural coefficient is 0.07 standard deviations for schooling and 0.02 for earnings, against 0.20 under ISEI on the same 1,342 workers. The differences narrow when ISEI is averaged over the same groups, but their bootstrap intervals stay above zero. Rural graduates appear better placed on the international index than on either score built from Chinese workers.
+
+![The rural coefficient as controls are added and under three occupational scores, with 95% intervals](output/figures/rural_coefficient.png)
 
 ## About this project
 
@@ -25,7 +27,7 @@ The analysis uses the 2017 Chinese General Social Survey (N = 12,582). The analy
 
 The main specification is unweighted OLS with HC3 standard errors. I check against survey weights, province fixed effects and standard errors clustered across 28 interview provinces. Uncertainty in the adjustment decomposition comes from a province cluster bootstrap (1,999 draws). Teaching occupation is modelled with linear probability models. The sector models use interaction terms to separate the rural coefficient within each sector.
 
-The main analysis uses syntax ISEI, which follows Ganzeboom's SPSS syntax modules. His earlier overview table and SIOPS provide alternative scores. The occupation allocation varies the reference score to examine how much of the fitted gap is assigned to teaching.
+The main analysis uses syntax ISEI, which follows Ganzeboom's SPSS syntax modules. His earlier overview table and SIOPS provide alternative scores. The occupation allocation varies the reference score to examine how much of the fitted gap is assigned to teaching. The schooling and earnings scores are group means among CGSS workers aged 25 to 60, estimated in five folds so that no worker's own answer enters their score. Five of the 1,347 positive-income workers are in the armed forces and cannot be scored, leaving 1,342 ([details](docs/writing-sample.md#occupational-profiles)).
 
 ## Limitations and next steps
 
@@ -41,7 +43,7 @@ The [research note](docs/research-note.md) presents the argument. The [adjustmen
 
 R 4.4.3 with package versions in [renv.lock](renv.lock). The CGSS 2017 data are not distributed here; see [data/raw](data/raw/README.md).
 
-The commands below run the main analysis. To rebuild all outputs, also run the four supplements in [reproducibility](docs/reproducibility.md).
+The commands below run the main analysis. To rebuild all outputs, also run the four supplements and the figure script in [reproducibility](docs/reproducibility.md).
 
 ```sh
 Rscript --vanilla -e 'source("renv/activate.R"); renv::restore(prompt = FALSE)'

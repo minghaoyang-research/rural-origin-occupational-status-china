@@ -51,11 +51,12 @@ This scores occupations by the schooling and earnings of CGSS workers and refits
 
 ## Regenerating outputs from saved results
 
-Two scripts regenerate outputs directly from saved tables, without the survey file.
+Three scripts regenerate outputs directly from saved tables, without the survey file.
 
 ```sh
 Rscript --vanilla R/05_allocation_reference.R
 Rscript --vanilla R/06_plot_mapping.R
+Rscript --vanilla R/13_plot_rural_coefficient.R
 ```
 
-They rebuild the reference-score table and mapping-contribution figure. The full pipeline already calls both.
+They rebuild the reference-score table, the mapping-contribution figure and the README figure. The main analysis already calls the first two. The third uses tables from the adjustment, teaching and profile supplements, so run it after them.

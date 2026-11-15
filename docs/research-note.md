@@ -59,6 +59,8 @@ I add the survey's current urban or rural classification to examine whether diff
 
 The excess teaching share is mostly in primary and secondary schools ([counts](../output/tables/occupation_details.csv)), with teaching recorded for 17.8% of rural graduates and 10.2% of urban graduates. With province indicators and weights among current workers, the adjusted teaching gap is 5.71 percentage points, with a province-clustered interval of 0.12–11.31.
 
+![Teaching among urban- and rural-origin graduates](../output/figures/teaching_by_origin.png)
+
 Table 2 puts the teaching shares beside the Model 4 estimates of the ISEI gap within each tier. Both point estimates rise across tiers.
 
 **Table 2. Teaching shares and adjusted ISEI gaps by qualification**
