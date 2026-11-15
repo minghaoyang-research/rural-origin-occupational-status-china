@@ -94,6 +94,12 @@ province_table <- function(fit, data) {
              CI_high = b + qt(.975, G - 1) * se, row.names = NULL)
 }
 
+# saved province resamples for scripts 11 and 12: one row per draw, one column per province
+province_draws <- function() {
+  draws <- read.csv("data/reference/province_draws.csv", check.names = FALSE)
+  as.matrix(draws[names(draws) != "draw"])
+}
+
 # one province-bootstrap draw for the adjustment supplement
 origin_adjustment_draw <- function(data, w, formula, blocks) {
   controls <- unname(unlist(blocks))

@@ -11,3 +11,11 @@ SHA-256 of the downloaded source CSV:
 ```text
 9afc6377d6ed6738d59aa0476777042e180397400d7dcd932e084045228b4d49
 ```
+
+# Province draws
+
+`province_draws.csv` holds the 1,999 bootstrap resamples of the 28 interview provinces used by scripts 11 and 12. Each row is one draw and gives how many times each province (`s41` code) was drawn. The draws come from NumPy's PCG64 generator with seed 42, which I used when I first ran these analyses in Python. Script 09 draws its own resamples in R.
+
+# Profile folds
+
+`profile_folds.csv` gives the fold, 0 to 4, of each of the 4,017 workers in the donor pool of script 12, in the order the pool is built from the survey file. The folds were dealt within occupational groups with NumPy (`default_rng(20261031)`). The file holds no survey values.

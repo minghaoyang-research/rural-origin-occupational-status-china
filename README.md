@@ -35,13 +35,13 @@ Possible routes include teacher training programmes that targeted rural students
 
 ## Reading the project
 
-The [research note](docs/research-note.md) presents the argument. The [adjustment supplement](docs/origin-adjustment.md) explains why controlling for education and family background raises rather than lowers the rural coefficient. [Further results](docs/sensitivity.md) and [measurement notes](docs/measurement.md) cover the remaining tables and variable definitions. [Reproducibility](docs/reproducibility.md) describes how to run the analysis.
+The [research note](docs/research-note.md) presents the argument. The [adjustment supplement](docs/origin-adjustment.md) explains why controlling for education and family background raises rather than lowers the rural coefficient. [Further results](docs/sensitivity.md) and [measurement notes](docs/measurement.md) cover the remaining tables and variable definitions. [Reproducibility](docs/reproducibility.md) describes how to run the analysis. [Writing sample tables](docs/writing-sample.md) gives the script and output behind each table in my writing sample.
 
 ## Running the code
 
 R 4.4.3 with package versions in [renv.lock](renv.lock). The CGSS 2017 data are not distributed here; see [data/raw](data/raw/README.md).
 
-The commands below run the main analysis. To rebuild all outputs, also run the [adjustment](docs/reproducibility.md#adjustment-supplement) and [geographic](docs/reproducibility.md#geographic-supplement) supplements.
+The commands below run the main analysis. To rebuild all outputs, also run the four supplements in [reproducibility](docs/reproducibility.md).
 
 ```sh
 Rscript --vanilla -e 'source("renv/activate.R"); renv::restore(prompt = FALSE)'

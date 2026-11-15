@@ -33,6 +33,22 @@ Rscript --vanilla -e 'source("renv/activate.R"); source("R/10_geographic_sorting
 
 This adds the survey's current urban–rural classification to Model 3 on the same 1,613 respondents. Results go to `output/supplementary/geographic-sorting/`.
 
+## Teaching and composition supplement
+
+```sh
+Rscript --vanilla -e 'source("renv/activate.R"); source("R/11_teaching_composition.R")'
+```
+
+This fits the teaching models by age, sex and qualification route, then adds teaching, occupation and employer terms to Model 3. Results go to `output/supplementary/teaching-composition/`.
+
+## Profile supplement
+
+```sh
+Rscript --vanilla -e 'source("renv/activate.R"); source("R/12_local_profiles.R")'
+```
+
+This scores occupations by the schooling and earnings of CGSS workers and refits Model 3 on each score. Results go to `output/supplementary/local-profiles/`. Both supplements take their bootstrap draws from [data/reference](../data/reference/README.md).
+
 ## Regenerating outputs from saved results
 
 Two scripts regenerate outputs directly from saved tables, without the survey file.
