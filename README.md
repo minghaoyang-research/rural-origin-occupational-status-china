@@ -3,7 +3,7 @@
 Minghao Yang<br>
 MA (Hons) Sociology, University of Edinburgh
 
-My writing sample, *Rural Origin, Occupational Status and Labour Income among Graduates in China*, uses the sample and models in this repository. The [table guide](docs/writing-sample.md) links each table to its script and saved output.
+My paper, *Rural Origin, Occupational Status and Labour Income among Graduates in China*, uses the sample and models in this repository. The [results guide](docs/results-guide.md) links each result to its script and saved output.
 
 In CGSS 2017, 13% of rural-origin respondents aged 25 to 60 completed their highest reported qualification at junior-college level or above. For urban-origin respondents the figure is 46.5%. Among 1,613 graduates with a current or previous occupation outside farming, does rural origin predict lower occupational status?
 
@@ -29,7 +29,7 @@ The analysis uses the 2017 Chinese General Social Survey (N = 12,582). The analy
 
 The main specification is unweighted OLS with HC3 standard errors. I check against survey weights, province fixed effects and standard errors clustered across 28 interview provinces. Uncertainty in the adjustment decomposition comes from a province cluster bootstrap (1,999 draws). Teaching occupation is modelled with linear probability models. The sector models use interaction terms to separate the rural coefficient within each sector.
 
-The main analysis uses syntax ISEI, which follows Ganzeboom's SPSS syntax modules. His earlier overview table and SIOPS provide alternative scores. The occupation allocation varies the reference score to examine how much of the fitted gap is assigned to teaching. The schooling and earnings scores are group means among CGSS workers aged 25 to 60, estimated in five folds so that no worker's own answer enters their score. Five of the 1,347 positive-income workers are in the armed forces and cannot be scored, leaving 1,342 ([details](docs/writing-sample.md#occupational-profiles)).
+The main analysis uses syntax ISEI, which follows Ganzeboom's SPSS syntax modules. His earlier overview table and SIOPS provide alternative scores. The occupation allocation varies the reference score to examine how much of the fitted gap is assigned to teaching. The schooling and earnings scores are group means among CGSS workers aged 25 to 60, estimated in five folds so that no worker's own answer enters their score. Five of the 1,347 positive-income workers are in the armed forces and cannot be scored, leaving 1,342 ([details](docs/results-guide.md#occupational-profiles)).
 
 ## Limitations and next steps
 
